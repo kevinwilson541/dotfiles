@@ -1,1 +1,106 @@
-/home/kevin/.Xresources
+urxvt*perl-lib:			/usr/lib/urxvt/perl
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size
+
+! Disable bindings
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+URxvt.keysym.C-i: perl:url-select:select_next
+
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+URxvt.resize-font.smaller: ^Y
+URxvt.resize-font.bigger: ^N
+
+URxvt*matcher.button: 1
+URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+urxvt*cursorUnderline: 0
+URxvt*loginShell: true
+
+URxvt*letterSpace: 0
+
+urxvt*cursorBlink:		true
+urxvt*scrollBar:		false
+URxvt*saveLines: 12000
+
+urxvt*internalBorder: 		5
+urxvt*dynamicColors: on
+urxvt.urgentOnBell:  true
+
+URxvt*.transparent: true
+URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 23
+
+URxvt*dynamicColors: on
+
+! Copy / Paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.clipboard.copycmd:    xsel -ib
+URxvt.clipboard.pastecmd:   xsel -ob
+
+! Fonts {{{
+  Xft.antialias: true
+  Xft.hinting:   true
+  Xft.rgba:      rgb
+  Xft.hintstyle: hintfull
+  Xft.dpi:       220
+! }}}
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+
+URxvt*font:		xft:Ubuntu Mono:style=Regular:pixelsize=28:antialias=true:hinting=true
+URxvt*boldFont:		xft:Ubuntu Mono:style=Bold:pixelsize=28:antialias=true
+URxvt*italicFont:	xft:Ubuntu Mono:style=Italic:pixelsize=28:antialias=true
+URxvt*boldItalicFont:	xft:Ubuntu Mono:style=Bold Italic:pixelsize=28:antalias=true
+
+/* URxvt*font:		xft:Input:style=Regular:pixelsize=28:antialias=true:hinting=true */
+/* URxvt*boldFont:		xft:Input:style=Bold:pixelsize=28:antialias=true */
+/* URxvt*italicFont:	xft:Input:style=Italic:pixelsize=28:antialias=true */
+/* URxvt*boldItalicFont:	xft:Input:style=Bold Italic:pixelsize=28:antalias=true */
+
+Xcursor.size: 30
+URxvt.imLocale: en_US.UTF-8
+
+! colors
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
