@@ -1,4 +1,4 @@
-#!/bin/xonsh
+#!/bin/zsh
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -24,6 +24,8 @@ twm &
 # xterm -geometry 80x50+494+51 &
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
-feh --bg-scale /home/kevin/Downloads/skyrim.jpg
+
+# for background, need image first
+# feh --bg-scale /home/kevin/Downloads/skyrim.jpg
 urxvt -e /usr/bin/zsh &
 exec i3
