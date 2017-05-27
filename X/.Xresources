@@ -30,7 +30,7 @@ urxvt*internalBorder: 		5
 urxvt*dynamicColors: on
 urxvt.urgentOnBell:  true
 
-URxvt*.transparent: true
+URxvt*.transparent: false
 URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 23
 
@@ -69,38 +69,74 @@ URxvt.imLocale: en_US.UTF-8
 
 ! colors
 ! special
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  #c5c8c6
+*.foreground:   #E6FFFF
+*.background:   #000000
+*.cursorColor:  #90ffff
 
 ! black
-*.color0:       #282a2e
-*.color8:       #373b41
+*.color0:       #000000
+*.color8:       #444444
 
 ! red
-*.color1:       #a54242
-*.color9:       #cc6666
+*.color1:       #ff2635
+*.color9:       #ff2635
 
 ! green
-*.color2:       #8c9440
-*.color10:      #b5bd68
+*.color2:       #00ffc9
+*.color10:      #00ffc9
 
 ! yellow
-*.color3:       #de935f
-*.color11:      #f0c674
+*.color3:       #ffc702
+*.color11:      #ffc702
 
 ! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
+*.color4:       #18cae6
+*.color12:      #18cae6
 
 ! magenta
-*.color5:       #85678f
-*.color13:      #b294bb
+*.color5:       #731572
+*.color13:      #731572
 
 ! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
+*.color6:       #16ffff
+*.color14:      #16ffff
 
 ! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+*.color7:       #E6FFFF
+*.color15:      #E6FFFF
+! special
+/* *.foreground:   #c5c8c6 */
+/* *.background:   #1d1f21 */
+/* *.cursorColor:  #c5c8c6 */
+
+/* ! black */
+/* *.color0:       #282a2e */
+/* *.color8:       #373b41 */
+
+/* ! red */
+/* *.color1:       #a54242 */
+/* *.color9:       #cc6666 */
+
+/* ! green */
+/* *.color2:       #8c9440 */
+/* *.color10:      #b5bd68 */
+
+/* ! yellow */
+/* *.color3:       #de935f */
+/* *.color11:      #f0c674 */
+
+/* ! blue */
+/* *.color4:       #5f819d */
+/* *.color12:      #81a2be */
+
+/* ! magenta */
+/* *.color5:       #85678f */
+/* *.color13:      #b294bb */
+
+/* ! cyan */
+/* *.color6:       #5e8d87 */
+/* *.color14:      #8abeb7 */
+
+/* ! white */
+/* *.color7:       #707880 */
+/* *.color15:      #c5c8c6 */
