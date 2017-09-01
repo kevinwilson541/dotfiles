@@ -48,16 +48,16 @@ URxvt.clipboard.pastecmd:   xsel -ob
   Xft.hinting:   true
   Xft.rgba:      rgb
   Xft.hintstyle: hintfull
-  Xft.dpi:       220
+  Xft.dpi:       120
 ! }}}
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 
-URxvt*font:		xft:Ubuntu Mono:style=Regular:pixelsize=28:antialias=true:hinting=true
-URxvt*boldFont:		xft:Ubuntu Mono:style=Bold:pixelsize=28:antialias=true
-URxvt*italicFont:	xft:Ubuntu Mono:style=Italic:pixelsize=28:antialias=true
-URxvt*boldItalicFont:	xft:Ubuntu Mono:style=Bold Italic:pixelsize=28:antalias=true
+URxvt*font:		xft:Hasklig:style=Regular:pixelsize=18:antialias=true:hinting=true
+URxvt*boldFont:		xft:Hasklig:style=Bold:pixelsize=18:antialias=true
+URxvt*italicFont:	xft:Hasklig:style=Italic:pixelsize=18:antialias=true
+URxvt*boldItalicFont:	xft:Hasklig:style=Bold Italic:pixelsize=18:antalias=true
 
 /* URxvt*font:		xft:Input:style=Regular:pixelsize=28:antialias=true:hinting=true */
 /* URxvt*boldFont:		xft:Input:style=Bold:pixelsize=28:antialias=true */

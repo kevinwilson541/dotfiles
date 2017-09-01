@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-commentary.git'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Townk/vim-autoclose'
 Plugin 'jimenezrick/vimerl'
@@ -15,15 +14,15 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'ervandew/supertab'
 call vundle#end()
 filetype plugin indent on
 
 Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 
-" ycm config
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_filetype_whitelist = {"python": 1, "erlang": 1, "rust": 1}
-let g:ycm_rust_src_path = '/home/kevin/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/src/src'
+" supertab
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " automatically close preview window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -51,19 +50,11 @@ let g:rust_recommended_style = 0
 " style
 set background=dark
 set t_Co=256
-" if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-"   \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-"   " Use the guicolorscheme plugin to makes 256-color or 88-color
-"   " terminal use GUI colors rather than cterm colors.
-"   runtime! plugin/guicolorscheme.vim
-"   GuiColorScheme iceberg
-" endif
 colorscheme iceberg
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 let g:Powerline_theme = "default"
 let g:Powerline_colorscheme = "default"
-let g:Powerline_symbols = "fancy"
+let g:Powerline_symbols = "unicode"
 
 inoremap <left> <nop>
 inoremap <down> <nop>
@@ -85,23 +76,15 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 :set completeopt=longest,menuone
-autocmd BufRead,BufNewFile *.py set omnifunc=pythoncomplete#Complete
 
-function! CleverTab()
-  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    if &omnifunc != ''
-      return "\<C-X>\<C-O>"
-    elseif &dictionary != ''
-      return "\<C-K>"
-    else
-      return "\<C-N>"
-    endif
-  endif
-endfunction
-
-inoremap <Tab> <C-R>=CleverTab()<CR>
+" racer-vim
+set hidden
+let g:racer_cmd = "/usr/bin/racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " syntastic config
 " let g:syntastic_javascript_checkers=['eslint']
