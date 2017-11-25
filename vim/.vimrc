@@ -1,33 +1,33 @@
 " start of vundle config
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-commentary.git'
-Plugin 'scrooloose/syntastic'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'Townk/vim-autoclose'
-Plugin 'jimenezrick/vimerl'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'ervandew/supertab'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+" Edit
+Plug 'tpope/vim-commentary'
+Plug 'w0rp/ale', {'for': ['javascript', 'rust']}
+Plug 'pangloss/vim-javascript'
+Plug 'Townk/vim-autoclose'
+Plug 'vim-airline/vim-airline'
+Plug 'jimenezrick/vimerl'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'rhysd/rust-doc.vim'
+Plug 'ervandew/supertab'
+
+" Nav
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+
+" Theme
+Plug 'cocopon/iceberg.vim'
+call plug#end()
 filetype plugin indent on
 
-Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
-
 " supertab
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 " automatically close preview window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
 
 " for numbered lines
 :set number
@@ -52,10 +52,6 @@ set background=dark
 set t_Co=256
 colorscheme iceberg
 
-let g:Powerline_theme = "default"
-let g:Powerline_colorscheme = "default"
-let g:Powerline_symbols = "unicode"
-
 inoremap <left> <nop>
 inoremap <down> <nop>
 inoremap <up> <nop>
@@ -79,12 +75,14 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 
 " racer-vim
 set hidden
-let g:racer_cmd = "/usr/bin/racer"
+let g:racer_cmd = '/usr/bin/racer'
 let g:racer_experimental_completer = 1
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
-" syntastic config
-" let g:syntastic_javascript_checkers=['eslint']
+" ale config
+let g:ale_linters = {'rust': ['cargo'], 'javascript': ['jshint']}
+let g:ale_rust_cargo_use_check = 1
+let g:ale_lint_on_text_changed = 'never'
